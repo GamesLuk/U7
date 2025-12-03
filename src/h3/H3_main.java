@@ -8,33 +8,17 @@ public class H3_main {
 
     public static void main(String[] args) {
 
-        int[] a = {1, 2, 3};
-        int[] b = {1, 2, 4};
-        int[] c = {1, 3, 2};
-        int[] d = {1, 2};
-        int[] e = {1, 2, 3};
-        int[] f = {1, 1, 2};
+        Mensch m1 = new Mensch();
+        m1.setName("Alice");
+        m1.setGebJahr(1990);
+        m1.setAlter();
+        Mensch m2 = new Mensch();
+        m2.setName("Bob");
+        m2.setGebJahr(2025);
+        m2.setAlter();
 
-        System.out.println("a + b -> " + compareArraysVal(a, b));
-        System.out.println("c + e -> " + compareArraysVal(c, e));
-        System.out.println("a + e -> " + compareArraysVal(a, e));
+
+        System.out.println(m1.getAlter());
+        System.out.println(m2.getAlter());
     }
-
-    public static boolean compareArraysVal(int[] a, int[] b) {
-        if (a.length != b.length) return false;
-
-        List<Integer> listA = new ArrayList<>(Arrays.stream(a).boxed().toList());
-        List<Integer> listB = new ArrayList<>(Arrays.stream(b).boxed().toList());
-
-        for (Integer value : listA) {
-            if (!listB.contains(value)) {
-                return false;
-            } else {
-                listB.remove(value);
-            }
-        }
-        return true;
-    }
-
-
 }
